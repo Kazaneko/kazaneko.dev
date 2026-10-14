@@ -6,7 +6,7 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 {{ partial "post-list.html" .Pages }}
-<p class="dim more">$ <a href="{{ "tags/" | relLangURL }}">ls tags/</a> · <a href="{{ "index.xml" | relLangURL }}">cat feed.rss</a></p>
+<p class="dim more">$ <a href="{{ "tags/" | relLangURL }}">ls tags/</a> · <a href="{{ "rss/" | relLangURL }}">cat feed.rss</a></p>
 {{- else }}
 {{- /* Other sections (setup, security): pages ordered by "weight",
        each with its description as a comment. */}}

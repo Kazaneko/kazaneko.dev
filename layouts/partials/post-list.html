@@ -1,8 +1,9 @@
-{{- /* List of posts in "ls -lt" style: permissions, date, file name. */}}
+{{- /* List of posts in "ls -lt" style: permissions, date, file name,
+       and the post title as a comment underneath. */}}
 {{- with . }}
 <ul class="ls">
   {{- range . }}
-  <li><span class="dim perms" aria-hidden="true">-rw-r--r--</span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ with .File }}{{ .ContentBaseName }}{{ else }}{{ .Title | urlize }}{{ end }}.md</a></li>
+  <li><span class="dim perms" aria-hidden="true">-rw-r--r--</span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><a href="{{ .RelPermalink }}">{{ with .File }}{{ .ContentBaseName }}{{ else }}{{ .Title | urlize }}{{ end }}.md</a><span class="dim post-title"># {{ .Title }}</span></li>
   {{- end }}
 </ul>
 {{- else }}

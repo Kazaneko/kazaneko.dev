@@ -11,7 +11,7 @@
 </section>
 
 {{- with site.GetPage "/now" }}
-<section>
+<section class="home-now">
   <p class="cmd">$ cat now.txt</p>
   {{- /* Only the part above the <!--more--> line in now.md; the rest is on the page itself. */}}
   <div class="prose">{{ .Summary }}</div>

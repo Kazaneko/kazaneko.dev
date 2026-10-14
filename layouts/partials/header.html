@@ -2,7 +2,7 @@
        home = ~   ·   a post = ~/blog/post-name */}}
 {{- $path := strings.TrimPrefix site.Home.RelPermalink .RelPermalink | printf "/%s" | strings.TrimSuffix "/" }}
 <header class="site-header">
-  <a class="prompt" href="{{ site.Home.RelPermalink }}">{{ site.Params.prompt }}<span class="dim">:~{{ replace $path "/" "/<wbr>" | safeHTML }}$</span></a>
+  <a class="prompt" href="{{ site.Home.RelPermalink }}">{{ site.Params.prompt }}<span class="dim">:~{{ range $i, $seg := split (strings.TrimPrefix "/" $path) "/" }}{{ if $seg }}/<wbr><span class="seg">{{ $seg }}</span>{{ end }}{{ end }}$</span></a>
   <nav aria-label="{{ i18n "main_menu" }}">
     <ul>
       {{- range site.Menus.main }}
