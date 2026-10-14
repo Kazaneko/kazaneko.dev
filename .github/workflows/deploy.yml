@@ -13,10 +13,12 @@ permissions:
   pages: write
   id-token: write
 
-# One deploy at a time; a newer one cancels the older one.
+# One deploy at a time. A deploy that has already started is never
+# cancelled: stopping it halfway can leave GitHub Pages stuck on
+# "updating_pages". Newer pushes wait their turn instead.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   HUGO_VERSION: 0.151.0     # same version used locally
@@ -26,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Hugo
         run: |
@@ -37,7 +39,7 @@ jobs:
 
       - name: Set up GitHub Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build the site
         # baseURL comes from GitHub: it is the right address both before
@@ -45,7 +47,7 @@ jobs:
         run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload the built site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -58,4 +60,4 @@ jobs:
     steps:
       - name: Publish to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
