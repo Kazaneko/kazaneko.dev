@@ -64,6 +64,9 @@ html {
   color: var(--fg);
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
+  /* Always keep room for the scrollbar: long and short pages then line up
+     at exactly the same spot, instead of shifting by its width. */
+  scrollbar-gutter: stable;
 }
 
 body {
