@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{- /* /tags/proxmox/: the posts with that tag, like a grep search. */}}
+<section>
+<p class="cmd">$ grep -l "tags:.*{{ .Title }}" blog/*.md</p>
+<h1>#{{ .Title }}</h1>
+{{ partial "post-list.html" .Pages }}
+<p class="more"><a href="{{ "tags/" | relLangURL }}">ls tags/</a></p>
+</section>
+{{ end }}

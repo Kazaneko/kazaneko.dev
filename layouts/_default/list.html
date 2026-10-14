@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section>
+{{- if eq .Section "blog" }}
+{{- /* Blog: posts by date, "ls -lt" style */}}
+<p class="cmd">$ ls -lt blog/</p>
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ partial "post-list.html" .Pages }}
+<p class="dim more">$ <a href="{{ "tags/" | relLangURL }}">ls tags/</a> · <a href="{{ "index.xml" | relLangURL }}">cat feed.rss</a></p>
+{{- else }}
+{{- /* Other sections (setup, security): pages ordered by "weight",
+       each with its description as a comment. */}}
+<p class="cmd">$ ls {{ .Section }}/</p>
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<ul class="ls ls-pages">
+  {{- range .Pages.ByWeight }}
+  <li><a href="{{ .RelPermalink }}">{{ with .File }}{{ .ContentBaseName }}{{ end }}.md</a><span class="dim"># {{ with .Description }}{{ . }}{{ else }}{{ .Title }}{{ end }}</span></li>
+  {{- end }}
+</ul>
+{{- end }}
+</section>
+{{ end }}

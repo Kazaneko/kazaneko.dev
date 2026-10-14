@@ -1,0 +1,4 @@
+# Hugo output: not part of the repo, GitHub Actions builds it
+/public/
+/resources/_gen/
+.hugo_build.lock

@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{- /* /tags/: every tag with its post count, like "ls" of folders. */}}
+<section>
+<p class="cmd">$ ls tags/</p>
+<h1>tags</h1>
+<ul class="ls ls-tags">
+  {{- range .Data.Terms.Alphabetical }}
+  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}/</a><span class="dim"># {{ .Count }} {{ i18n "posts" .Count }}</span></li>
+  {{- else }}
+  <li class="dim">{{ i18n "no_posts" }}</li>
+  {{- end }}
+</ul>
+</section>
+{{ end }}

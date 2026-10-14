@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article>
+  <p class="cmd">$ cat {{ with .File }}{{ .ContentBaseName }}{{ end }}.md</p>
+  <h1>{{ .Title }}</h1>
+  {{- if not .Date.IsZero }}
+  <p class="meta"># <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} {{ i18n "reading_time" }}
+    {{- if gt .Lastmod .Date }} · edit <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006-01-02" }}</time>{{ end }}
+    {{- partial "tags.html" . }}</p>
+  {{- end }}
+  {{ .Content }}
+</article>
+{{ end }}

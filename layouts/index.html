@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section>
+  <p class="cmd">$ whoami</p>
+  <h1 class="name">{{ site.Title }}<span class="cursor" aria-hidden="true">_</span></h1>
+  {{ .Content }}
+</section>
+
+<section>
+  <p class="cmd">$ ls -lt blog/ | head -5</p>
+  {{ partial "post-list.html" (first 5 (where site.RegularPages "Section" "blog")) }}
+</section>
+
+{{- with site.GetPage "/now" }}
+<section>
+  <p class="cmd">$ cat now.txt</p>
+  <div class="prose">{{ .Content }}</div>
+  <p><a href="{{ .RelPermalink }}">{{ .Title | lower }} →</a></p>
+</section>
+{{- end }}
+{{ end }}

@@ -1,0 +1,8 @@
+# Fixed interface text in Italian. Same keys as i18n/en.yaml.
+skip_to_content: "Vai al contenuto"
+main_menu: "Menu principale"
+no_posts: "total 0 (ancora nessun post)"
+reading_time: "min"
+back: "cd .."
+footer_note: "niente cookie · niente tracciamento · niente javascript"
+posts: { one: "post", other: "post" }

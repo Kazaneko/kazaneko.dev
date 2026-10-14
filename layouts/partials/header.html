@@ -1,0 +1,24 @@
+{{- /* The "prompt" at the top shows where you are, like in a terminal:
+       home = ~   ·   a post = ~/blog/post-name */}}
+{{- $path := strings.TrimPrefix site.Home.RelPermalink .RelPermalink | printf "/%s" | strings.TrimSuffix "/" }}
+<header class="site-header">
+  <a class="prompt" href="{{ site.Home.RelPermalink }}">{{ site.Params.prompt }}<span class="dim">:~{{ $path }}$</span></a>
+  <nav aria-label="{{ i18n "main_menu" }}">
+    <ul>
+      {{- range site.Menus.main }}
+      {{- $url := .URL | relLangURL }}
+      <li><a href="{{ $url }}"{{ if hasPrefix $.RelPermalink $url }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{- end }}
+      {{- /* Language switch: just a link, no JavaScript.
+             Goes to this page in the other language if it exists, otherwise to that language's home. */}}
+      {{- $current := .Lang }}
+      {{- range site.Home.AllTranslations }}
+        {{- if ne .Lang $current }}
+          {{- $target := . }}
+          {{- range $.Translations }}{{ if eq .Lang $target.Lang }}{{ $target = . }}{{ end }}{{ end }}
+      <li><a class="lang" href="{{ $target.RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">[{{ .Lang }}]</a></li>
+        {{- end }}
+      {{- end }}
+    </ul>
+  </nav>
+</header>

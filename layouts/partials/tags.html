@@ -1,0 +1,2 @@
+{{- /* A post's tags, as links. Takes the page. */}}
+{{- with .GetTerms "tags" }} · tags:{{ range . }} <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}

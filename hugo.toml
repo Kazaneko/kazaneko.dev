@@ -1,0 +1,104 @@
+# Main Hugo configuration for kazaneko.dev
+baseURL = "https://kazaneko.dev/"
+title = "Kazaneko"
+
+# Two languages: English is the main one, at the root (kazaneko.dev/);
+# Italian lives under kazaneko.dev/it/. Switching language is a plain link.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+enableRobotsTXT = true
+capitalizeListTitles = false   # tags stay lowercase, as written
+
+# Tags only (no "categories"): /tags/ lists every tag,
+# /tags/proxmox/ lists the posts with that tag.
+[taxonomies]
+  tag = "tags"
+
+# RSS feed: every post, full text (see layouts/_default/rss.xml).
+[services.rss]
+  limit = -1
+
+[params]
+  author = "Kazaneko"
+  email = "hello@kazaneko.dev"
+  prompt = "kazaneko@udine"   # the "user@host" shown at the top of every page
+
+[markup.goldmark.renderer]
+  unsafe = false   # no raw HTML in Markdown: safer
+
+[markup.highlight]
+  codeFences = false   # single-colour code blocks, terminal style
+
+# ---------------------------------------------------------------------
+# ENGLISH (main language), content in content/en/
+[languages.en]
+  languageName = "English"
+  languageCode = "en"
+  contentDir = "content/en"
+  weight = 1
+  [languages.en.params]
+    description = "My personal blog and a window into my projects."
+
+  # Top menu, in display order. URLs have no leading "/" on purpose,
+  # so they also work when the site lives in a subfolder.
+  [[languages.en.menus.main]]
+    name = "about"
+    url = "about/"
+    weight = 10
+  [[languages.en.menus.main]]
+    name = "ai"
+    url = "ai/"
+    weight = 20
+  [[languages.en.menus.main]]
+    name = "setup"
+    url = "setup/"
+    weight = 30
+  [[languages.en.menus.main]]
+    name = "security"
+    url = "security/"
+    weight = 40
+  [[languages.en.menus.main]]
+    name = "now"
+    url = "now/"
+    weight = 50
+  [[languages.en.menus.main]]
+    name = "blog"
+    url = "blog/"
+    weight = 60
+
+# ---------------------------------------------------------------------
+# ITALIAN, content in content/it/, published under /it/
+[languages.it]
+  languageName = "Italiano"
+  languageCode = "it"
+  contentDir = "content/it"
+  weight = 2
+  [languages.it.params]
+    description = "Il mio blog personale e una finestra sui miei progetti."
+
+  # Same URLs as English: Hugo adds /it/ in front by itself.
+  [[languages.it.menus.main]]
+    name = "chi-sono"
+    url = "about/"
+    weight = 10
+  [[languages.it.menus.main]]
+    name = "ia"
+    url = "ai/"
+    weight = 20
+  [[languages.it.menus.main]]
+    name = "setup"
+    url = "setup/"
+    weight = 30
+  [[languages.it.menus.main]]
+    name = "sicurezza"
+    url = "security/"
+    weight = 40
+  [[languages.it.menus.main]]
+    name = "adesso"
+    url = "now/"
+    weight = 50
+  [[languages.it.menus.main]]
+    name = "blog"
+    url = "blog/"
+    weight = 60
