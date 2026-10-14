@@ -22,7 +22,7 @@ capitalizeListTitles = false   # tags stay lowercase, as written
 [params]
   author = "Kazaneko"
   email = "hello@kazaneko.dev"
-  prompt = "kazaneko@udine"   # the "user@host" shown at the top of every page
+  prompt = "kazaneko@web"   # the "user@host" shown at the top of every page
 
 [markup.goldmark.renderer]
   unsafe = false   # no raw HTML in Markdown: safer
