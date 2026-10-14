@@ -208,6 +208,10 @@ th, td { border: 1px solid var(--line); padding: 0.3rem 0.75rem; text-align: lef
 .ls-pages li, .ls-tags li { grid-template-columns: 18ch minmax(0, 1fr); }
 /* A wrapped comment lines up after the "# ", like a hanging indent */
 .ls-pages .dim { padding-left: 2ch; text-indent: -2ch; }
+/* Pages of a section get an amber "- " in front, like a Markdown list */
+.ls-pages li { grid-template-columns: 2ch 18ch minmax(0, 1fr); column-gap: 0; }
+.ls-pages .dim { margin-left: 1.5rem; }
+.ls-pages li::before { content: "-"; color: var(--accent); }
 
 /* 7) CODE ------------------------------------------------------------- */
 code, pre { font-family: inherit; font-size: 0.9375em; }
@@ -248,5 +252,6 @@ pre {
   h1 { font-size: 1.9rem; }
   .ls li { grid-template-columns: 11ch minmax(0, 1fr); column-gap: 1rem; }
   .ls .perms { display: none; }   /* on narrow screens the permissions column is hidden */
-  .ls-pages li { grid-template-columns: 1fr; margin-bottom: 0.6rem; }  /* comment below the name */
+  .ls-pages li { grid-template-columns: 2ch minmax(0, 1fr); column-gap: 0; margin-bottom: 0.6rem; }  /* comment below the name */
+  .ls-pages .dim { grid-column: 2; margin-left: 0; }
 }
