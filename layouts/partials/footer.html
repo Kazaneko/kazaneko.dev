@@ -3,5 +3,5 @@
   <a class="footer-back" href="{{ with .Parent }}{{ .RelPermalink }}{{ else }}{{ site.Home.RelPermalink }}{{ end }}">← {{ i18n "back" }}</a>
   {{- end }}
   <span class="footer-note"># {{ i18n "footer_note" }} <a href="https://disable-javascript.org/">{{ i18n "footer_nojs" }}</a></span>
-  <span class="footer-contact"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> · <a href="{{ "index.xml" | relLangURL }}">rss</a></span>
+  <span class="footer-contact"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> · <a href="{{ "rss/" | relLangURL }}">rss</a></span>
 </footer>

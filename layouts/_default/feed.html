@@ -1,0 +1,14 @@
+{{- /* The page behind the "rss" link in the footer: explains what the feed is
+       and shows its address. The feed itself (index.xml) is for feed readers. */}}
+{{ define "main" }}
+{{- $feed := (site.Home.OutputFormats.Get "rss").Permalink }}
+<article>
+  <p class="cmd">$ cat rss.md</p>
+  <h1>RSS</h1>
+  <p>Follow new posts without social media, accounts or newsletters: copy this address into a feed reader app, and new posts show up there on their own.</p>
+  <p class="cmd">$ echo $FEED</p>
+  <pre><code>{{ $feed }}</code></pre>
+  <p class="dim"># Feed readers: NetNewsWire, Feedly, Thunderbird, Miniflux, or any app that speaks RSS.</p>
+  <p><a href="{{ $feed }}">open the raw feed →</a></p>
+</article>
+{{ end }}
