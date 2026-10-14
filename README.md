@@ -62,12 +62,14 @@ An Italian translation goes in `content/it/blog/` with the same file name.
 | `layouts/_default/baseof.html` | The skeleton shared by every page (head, header, main, footer) |
 | `layouts/_default/single.html` | A single page or post |
 | `layouts/_default/list.html` | A list of pages (e.g. /blog, /setup) |
-| `layouts/index.html` | The home page: `whoami`, latest posts, `now` |
+| `layouts/index.html` | The home page: `whoami`, latest posts, the top of `now` (up to the `<!--more-->` line) |
 | `layouts/partials/` | Reused pieces: `head.html`, `header.html` (prompt + menu), `footer.html`, `post-list.html` (`ls -lt` style list), `tags.html` |
 | `layouts/taxonomy.html`, `layouts/term.html` | The tag pages |
 | `layouts/_default/rss.xml` | The RSS feed (posts only, full text) |
 | `archetypes/blog.md` | Template for new posts |
 | `static/css/style.css` | The only CSS file. Colors are variables at the top |
 | `static/fonts/` | The JetBrains Mono font and its license (OFL) |
-| `i18n/en.yaml`, `i18n/it.yaml` | Fixed interface text in each language |
+| `i18n/en.yaml`, `i18n/it.yaml` | Fixed interface text. The interface stays in English in both languages, so the two files match |
+| `layouts/404.html` | The "page not found" page |
+| `static/favicon.svg` | The icon shown in the browser tab |
 

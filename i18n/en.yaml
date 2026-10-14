@@ -6,3 +6,6 @@ reading_time: "min"
 back: "cd .."
 footer_note: "no cookies · no tracking · no javascript"
 posts: { one: "post", other: "posts" }
+not_found_title: "Page not found"
+not_found: "No such file or directory"
+not_found_home: "go back home"

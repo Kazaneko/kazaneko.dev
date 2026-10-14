@@ -77,13 +77,14 @@ capitalizeListTitles = false   # tags stay lowercase, as written
   [languages.it.params]
     description = "Il mio blog personale e una finestra sui miei progetti."
 
-  # Same URLs as English: Hugo adds /it/ in front by itself.
+  # Same menu as English (the interface stays in English in both
+  # languages, only page content changes). Hugo adds /it/ in front.
   [[languages.it.menus.main]]
-    name = "chi-sono"
+    name = "about"
     url = "about/"
     weight = 10
   [[languages.it.menus.main]]
-    name = "ia"
+    name = "ai"
     url = "ai/"
     weight = 20
   [[languages.it.menus.main]]
@@ -91,11 +92,11 @@ capitalizeListTitles = false   # tags stay lowercase, as written
     url = "setup/"
     weight = 30
   [[languages.it.menus.main]]
-    name = "sicurezza"
+    name = "security"
     url = "security/"
     weight = 40
   [[languages.it.menus.main]]
-    name = "adesso"
+    name = "now"
     url = "now/"
     weight = 50
   [[languages.it.menus.main]]

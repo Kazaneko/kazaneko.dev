@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- kazaneko.dev favicon: an amber ">_" prompt on the dark background -->
+  <rect width="32" height="32" rx="6" fill="#121410"/>
+  <path d="M8 10l6 6-6 6" fill="none" stroke="#e3a63d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 23h9" stroke="#e3a63d" stroke-width="3" stroke-linecap="round"/>
+</svg>

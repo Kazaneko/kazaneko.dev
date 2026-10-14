@@ -1,8 +1,12 @@
-# Fixed interface text in Italian. Same keys as i18n/en.yaml.
-skip_to_content: "Vai al contenuto"
-main_menu: "Menu principale"
-no_posts: "total 0 (ancora nessun post)"
+# Interface text for the Italian pages. Kept identical to i18n/en.yaml on
+# purpose: the interface stays in English, only page content is translated.
+skip_to_content: "Skip to content"
+main_menu: "Main menu"
+no_posts: "total 0 (no posts yet)"
 reading_time: "min"
 back: "cd .."
-footer_note: "niente cookie · niente tracciamento · niente javascript"
-posts: { one: "post", other: "post" }
+footer_note: "no cookies · no tracking · no javascript"
+posts: { one: "post", other: "posts" }
+not_found_title: "Page not found"
+not_found: "No such file or directory"
+not_found_home: "go back home"

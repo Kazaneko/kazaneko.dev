@@ -9,6 +9,8 @@ description: "Cosa sto facendo in questo periodo."
 
 - [TODO: current project or activity]
 
+<!--more-->
+
 ## Sto imparando
 
 - [TODO: what you are studying]

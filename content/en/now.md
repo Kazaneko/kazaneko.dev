@@ -9,6 +9,8 @@ description: "What I am working on at the moment."
 
 - [TODO: current project or activity]
 
+<!--more-->
+
 ## Learning
 
 - [TODO: what you are studying]

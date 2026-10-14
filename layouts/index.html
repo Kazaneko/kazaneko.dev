@@ -13,7 +13,8 @@
 {{- with site.GetPage "/now" }}
 <section>
   <p class="cmd">$ cat now.txt</p>
-  <div class="prose">{{ .Content }}</div>
+  {{- /* Only the part above the <!--more--> line in now.md; the rest is on the page itself. */}}
+  <div class="prose">{{ .Summary }}</div>
   <p><a href="{{ .RelPermalink }}">{{ .Title | lower }} →</a></p>
 </section>
 {{- end }}

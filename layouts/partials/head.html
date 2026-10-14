@@ -1,8 +1,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+{{- $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+{{- if eq .Kind "404" }}{{ $title = printf "404 · %s" site.Title }}{{ end }}
+{{- $description := .Description | default site.Params.description }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.author }}">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#121410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f2ec" media="(prefers-color-scheme: light)">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+{{- /* What link previews show (Telegram, LinkedIn, Mastodon…). Text only: no image, nothing loaded from elsewhere. */}}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="{{ cond (eq .Lang "it") "it_IT" "en_US" }}">
+{{- if and .IsPage (eq .Section "blog") }}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- else }}
+<meta property="og:type" content="website">
+{{- end }}
+<meta name="twitter:card" content="summary">
 {{- /* Preload the regular font so text shows up in the right typeface straight away. */}}
 <link rel="preload" href="{{ "fonts/JetBrainsMono-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">

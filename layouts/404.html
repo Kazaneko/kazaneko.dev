@@ -1,0 +1,10 @@
+{{- /* Shown by GitHub Pages for any address that does not exist. */}}
+{{ define "main" }}
+<section>
+  <p class="cmd">$ cat this-page.md</p>
+  <p class="error">cat: this-page.md: {{ i18n "not_found" }}</p>
+  <h1>404 · {{ i18n "not_found_title" }}</h1>
+  <p class="cmd">$ cd ~</p>
+  <p><a href="{{ site.Home.RelPermalink }}">{{ i18n "not_found_home" }} →</a></p>
+</section>
+{{ end }}
