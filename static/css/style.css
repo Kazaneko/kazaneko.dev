@@ -184,8 +184,8 @@ strong { color: var(--strong); }
 
 /* Bullet lists with an amber dash instead of a dot */
 article ul, .prose ul { list-style: none; padding-left: 0; }
-article ul li, .prose ul li { padding-left: 2ch; text-indent: -2ch; }
-article ul li::before, .prose ul li::before { content: "- "; color: var(--accent); }
+article ul li, .prose ul li { position: relative; padding-left: 2ch; }
+article ul li::before, .prose ul li::before { content: "-"; color: var(--accent); position: absolute; left: 0; }
 article ol li::marker, .prose ol li::marker { color: var(--accent); }
 
 blockquote {
