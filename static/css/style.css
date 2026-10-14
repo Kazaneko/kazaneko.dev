@@ -202,10 +202,12 @@ th, td { border: 1px solid var(--line); padding: 0.3rem 0.75rem; text-align: lef
   margin: 0.2rem 0;
   font-variant-numeric: tabular-nums;
 }
-.ls a { justify-self: start; }
+.ls a { justify-self: start; align-self: start; overflow-wrap: anywhere; }  /* underline stays under the name, even when the comment wraps */
 
 /* Pages of a section (and tags): name + comment */
 .ls-pages li, .ls-tags li { grid-template-columns: 18ch minmax(0, 1fr); }
+/* A wrapped comment lines up after the "# ", like a hanging indent */
+.ls-pages .dim { padding-left: 2ch; text-indent: -2ch; }
 
 /* 7) CODE ------------------------------------------------------------- */
 code, pre { font-family: inherit; font-size: 0.9375em; }
