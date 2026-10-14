@@ -107,8 +107,10 @@ img { display: block; max-width: 100%; height: auto; }
   background: var(--accent);
   color: var(--bg);
   border-color: var(--accent);
-  padding: 0 0.4ch;
-  margin: 0 -0.4ch;
+  /* Widen the block by the same amount on both sides with shadows, not
+     padding and margins: it does not move the text and looks the same in
+     every browser. */
+  box-shadow: -0.4ch 0 0 var(--accent), 0.4ch 0 0 var(--accent);
 }
 
 .lang { color: var(--dim); border-color: var(--line); }
