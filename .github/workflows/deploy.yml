@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  HUGO_VERSION: 0.151.0     # same version used locally
+  HUGO_VERSION: 0.151.0     # same version as the Dockerfile and local setup
 
 jobs:
   build:

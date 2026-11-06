@@ -30,6 +30,21 @@ hugo server           # serve the site on http://localhost:1313
 English is at http://localhost:1313/, Italian at http://localhost:1313/it/.
 `hugo server` reloads the page every time a file is saved. Stop it with `Ctrl+C`.
 
+### With Docker (no Hugo install needed)
+
+The `Dockerfile` and `compose.yaml` run the same Hugo version in a container:
+
+```bash
+docker compose up          # first run builds the image, then serves http://localhost:1313
+docker compose down        # after Ctrl+C, removes the container
+```
+
+Edit files as usual: the page reloads on every save. The container runs as an
+unprivileged user, sees the repo read-only, has no Linux capabilities, and the
+port is open only on `127.0.0.1`. After changing `HUGO_VERSION` (keep it the
+same as in `.github/workflows/deploy.yml`), rebuild with
+`docker compose up --build`.
+
 To build the final site (into `public/`, which Git ignores):
 
 ```bash

@@ -1,0 +1,2 @@
+# The image only needs Hugo; the site itself is mounted at run time
+*

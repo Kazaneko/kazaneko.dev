@@ -1,0 +1,18 @@
+# Start:  docker compose up      -> http://localhost:1313 (live reload)
+# Stop:   Ctrl+C, then docker compose down
+services:
+  hugo:
+    build: .
+    image: kazaneko-dev
+    container_name: kazaneko-dev
+    ports:
+      - "127.0.0.1:1313:1313"   # reachable only from this computer
+    volumes:
+      - ./:/site:ro             # the container can read the site, never change it
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
