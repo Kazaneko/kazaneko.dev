@@ -4,9 +4,7 @@ description: "Le scelte che ho fatto seguendo le raccomandazioni ANSSI per confi
 weight: 20
 ---
 
-[TODO: one line on what the ANSSI guide is and which machine these choices are for]
-
-Fonte: [TODO: link to the original guide and its version]
+Fonte: [Configuration recommendations of a GNU/Linux system](https://messervices.cyber.gouv.fr/guides/en-configuration-recommendations-gnulinux-system), ANSSI-BP-028-EN, v2.0 (October 2022)
 
 La guida si capisce benissimo da sola, quindi questa pagina non la spiega: elenca solo cosa ho scelto per ogni regola. Per i dettagli cerca l'ID della regola nella guida.
 

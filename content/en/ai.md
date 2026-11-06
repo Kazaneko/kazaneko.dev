@@ -32,4 +32,4 @@ Although I'm good at English, it isn't my first language, so I use AI to pinpoin
 I even use it to translate all the pages from English to Italian, my native language
 (because I want to write in English, but I can't be bothered to translate everything).
 
-But `/content/en/*` is written by me with the ONLY exception of [security/anssi-linux.md](/security/anssi-linux/).
+But `/content/en/*` is written by me with the ONLY exception of the [security section](/security/).
